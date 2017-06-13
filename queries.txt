@@ -1,0 +1,16 @@
+Changes after 2nd April,2017
+-----------------------------
+//this index will speed up the clicks in the Category loading
+   db.products.createIndex( { category : 1 } );
+//this index will speed up the pagination page loads
+   db.products.createIndex( { name : 1 } );--------------this is done by Priyal, so ignore.
+-------------------------------------------------------------------------------------------
+
+//----->this index will make email attribute unique in the users collection, so no two                     users/admin/customer/merchant can signup with the same email id
+   db.users.createIndex( { "email": 1 }, { unique: true } )
+
+   db.policymaster.insert({name:"Orders"});
+//---->then use the application and edit SuperUser policy to allow isRead,isWrite and isDelete of orders
+
+//---->right click on orders collection in robomongo and remove all documents, the changes I have done now will not work with old orders.
+-----------------------------
